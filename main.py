@@ -7,12 +7,19 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 1
+WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+check_marks = ""
 
 # ---------------------------- TIMER RESET ------------------------------- # 
+def reset():
+    global reps, check_marks
+    reps = 0
+    check_marks = ""
+    canvas.itemconfig(timer_text, text="00:00")
+
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
@@ -37,8 +44,13 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{minutes}:{seconds}")
     if count > 0 :
         window.after(1000, count_down, count-1)
-    else :
+    else:
         start_timer()
+        check_marks = ""
+        works_sessions = math.floor(reps/2)
+        for n in range(works_sessions):
+            check_marks += "✔"
+            label_check["text"] = check_marks
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -57,14 +69,14 @@ canvas.grid(column=1, row=1)
 label_timer = Label(text="Timer", fg=GREEN, bg=YELLOW, highlightthickness=0, font=(FONT_NAME, 40, "bold"))
 label_timer.grid(column=1, row=0)
 
-label_check = Label(text="🗸", fg=GREEN, bg=YELLOW, highlightthickness=0, font=(FONT_NAME, 24, "bold"))
+label_check = Label(fg=GREEN, bg=YELLOW, highlightthickness=0, font=(FONT_NAME, 24, "bold"))
 label_check.grid(column=1, row=4)
 
 # buttons
 start_button = Button(text="Start", width=5, highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", width=5, highlightthickness=0)
+reset_button = Button(text="Reset", width=5, highlightthickness=0, command=reset)
 reset_button.grid(column=2, row=2)
 
 
