@@ -25,7 +25,7 @@ Le projet utilise les constantes suivantes pour définir la durée du travail, d
 ## Installation et Configuration
 
 - Python 3.9.6
-- Importation du module pandas (`import pandas`)
+- Importation du module tkinter (`import tkinter`)
 
 ## Capture d'écran
 
