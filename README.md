@@ -41,7 +41,7 @@ Le projet utilise les constantes suivantes pour définir la durée du travail, d
 
 ## Capture d'écran
 
-![Pomodoro Timer](assets/screenshot.png)
+![Pomodoro Timer](assets/screenshot.png) ![Pomodoro Timer](assets/screenshot2.png)
 
 ## Remarques
 
