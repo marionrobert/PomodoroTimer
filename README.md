@@ -22,6 +22,11 @@ Le projet utilise les constantes suivantes pour définir la durée du travail, d
 
 - **Interface utilisateur (`UI SETUP`):** Utilise Tkinter pour créer une interface graphique avec un bouton de démarrage, un bouton de réinitialisation, une image de tomate, une minuterie et des étiquettes pour afficher le statut du timer et les sessions de travail complétées.
 
+## Installation et Configuration
+
+- Python 3.9.6
+- Importation du module pandas (`import pandas`)
+
 ## Capture d'écran
 
 ![Pomodoro Timer](assets/screenshot.png)
